@@ -1304,120 +1304,148 @@ export default function Home() {
         )}
       </main>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          background-color: #1a1a1a;
-          color: #ffffff;
-          padding: 20px;
-        }
-        main {
-          text-align: center;
-          width: 100%;
-          max-width: 600px;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+      <footer className="footer">
+      Made with Claude by{' '}
+      
+        href="https://x.com/Must_be_Ash"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="highlight"
+        <a>
+        @must_be_ash
+      </a>
+    </footer>
+
+    <style jsx>{`
+      .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 20px;
+      }
+      main {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .title {
+        font-size: 22px;
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-style: italic;
+        color: #f0f0f0;
+      }
+      .frequency-control {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .frequency-value {
+        margin-left: 15px;
+      }
+      .start-button, .next-button {
+        font-size: 24px;
+        padding: 15px 30px;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        background-size: 200% 200%;
+        color: #ffffff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: gradientAnimation 5s ease infinite;
+      }
+      .start-button:hover, .next-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      }
+      .start-button:active, .next-button:active {
+        transform: scale(0.95);
+      }
+      .next-button {
+        margin-top: 20px;
+        font-size: 20px;
+        padding: 10px 20px;
+      }
+      .countdown {
+        font-size: 72px;
+        font-weight: bold;
+        animation: pulse 1s infinite;
+      }
+      .words {
+        font-size: 48px;
+        font-weight: bold;
+      }
+      .words span {
+        margin: 0 10px;
+        display: inline-block;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #a0a0a0;
+      }
+      .highlight {
+        color: #4ecdc4;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+      .highlight:hover {
+        color: #ff6b6b;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @media (max-width: 600px) {
         .title {
-          font-size: 22px;
-          margin-top: 40px;
-          margin-bottom: 40px;
-          font-weight: 600;
-          font-style: italic;
-          color: #808080;
-        }
-        .frequency-control {
-          margin-bottom: 20px;
-          display: flex;
-          align-items: center;
-        }
-        .frequency-value {
-          margin-left: 15px;
+          font-size: 18px;
         }
         .start-button, .next-button {
-          font-size: 24px;
-          padding: 15px 90px;
-          background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-          background-size: 200% 200%;
-          color: #ffffff;
-          border: none;
-          border-radius: 50px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          animation: gradientAnimation 5s ease infinite;
-        }
-        .start-button:hover, .next-button:hover {
-          transform: scale(1.05);
-          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
-        .start-button:active, .next-button:active {
-          transform: scale(0.95);
+          font-size: 20px;
+          padding: 12px 24px;
         }
         .next-button {
-          margin-top: 20px;
-          font-size: 20px;
-          padding: 10px 20px;
+          font-size: 18px;
+          padding: 8px 16px;
         }
         .countdown {
-          font-size: 72px;
-          font-weight: bold;
-          animation: pulse 1s infinite;
+          font-size: 60px;
         }
         .words {
-          font-size: 48px;
-          font-weight: bold;
+          font-size: 36px;
         }
-        .words span {
-          margin: 0 10px;
-          display: inline-block;
+        .footer {
+          font-size: 12px;
         }
-        @keyframes pulse {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-          100% { transform: scale(1); }
-        }
-        @keyframes gradientAnimation {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        @media (max-width: 600px) {
-          .title {
-            font-size: 18px;
-          }
-          .start-button, .next-button {
-            font-size: 20px;
-            padding: 12px 90px;
-          }
-          .next-button {
-            font-size: 18px;
-            padding: 8px 16px;
-          }
-          .countdown {
-            font-size: 60px;
-          }
-          .words {
-            font-size: 36px;
-          }
-        }
-      `}</style>
+      }
+    `}</style>
 
-      <style jsx global>{`
-        body {
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-      `}</style>
-    </div>
-  );
+    <style jsx global>{`
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;
+      }
+    `}</style>
+  </div>
+);
 }
