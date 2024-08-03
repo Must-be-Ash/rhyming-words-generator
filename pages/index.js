@@ -1468,7 +1468,7 @@ export default function Home() {
         .next-button .stop-button {
           font-size: 18px;
           margin-top: 1rem;
-          padding: 8px 90px;
+          padding: 8px 40px;
         }
         .countdown {
           font-size: 60px;
