@@ -1305,16 +1305,17 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-      Made with Claude by{' '}
-      
-        href="https://x.com/Must_be_Ash"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="highlight"
-        <a>
-        @must_be_ash
-      </a>
-    </footer>
+  Made with Claude by{' '}
+  <a
+    href="https://x.com/Must_be_Ash"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="highlight"
+  >
+    @must_be_ash
+  </a>
+</footer>
+
 
     <style jsx>{`
       .container {
