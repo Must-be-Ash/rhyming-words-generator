@@ -1255,13 +1255,24 @@ export default function Home() {
     startWordUpdateTimer();
   };
 
+  const handleStop = () => {
+    console.log('Stop button clicked');
+    setStarted(false);
+    setCountdown(null);
+    setWords([]);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+  };
+
+
   console.log('Render - started:', started, 'countdown:', countdown, 'words:', words);
 
 
   return (
     <div className="container">
       <Head>
-  <title>Rap Challenge</title>
+  <title>Rhyme Time</title>
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -1270,7 +1281,7 @@ export default function Home() {
   <meta name="theme-color" content="#ffffff" />
 </Head>
 
-      <h1 className="title">Rap Challenge</h1>
+      <h1 className="title">Rhyme Time</h1>
       
       <main>
         <div className="frequency-control">
@@ -1285,10 +1296,12 @@ export default function Home() {
           <span className="frequency-value">{frequency} seconds</span>
         </div>
         {!started && (
-          <button className="start-button" onClick={handleStart}>
-            Start
-          </button>
-        )}
+  <div className="start-button-container">
+    <button className="start-button" onClick={handleStart}>
+      Start
+    </button>
+  </div>
+)}
         {countdown !== null && <div className="countdown">{countdown}</div>}
         {started && countdown === null && words && words.length > 0 && (
           <>
@@ -1297,9 +1310,14 @@ export default function Home() {
                 <span key={index}>{word}</span>
               ))}
             </div>
-            <button className="next-button" onClick={handleNext}>
-              Next
-            </button>
+            <div className="button-container">
+              <button className="stop-button" onClick={handleStop}>
+                Stop
+              </button>
+              <button className="next-button" onClick={handleNext}>
+                Next
+              </button>
+            </div>
           </>
         )}
       </main>
@@ -1354,32 +1372,54 @@ export default function Home() {
       .frequency-value {
         margin-left: 15px;
       }
-      .start-button, .next-button {
-        font-size: 24px;
-        padding: 15px 90px;
-        margin-top: 1rem;
-        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-        background-size: 200% 200%;
-        color: #ffffff;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        animation: gradientAnimation 5s ease infinite;
-      }
-      .start-button:hover, .next-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-      }
-      .start-button:active, .next-button:active {
-        transform: scale(0.95);
-      }
-      .next-button {
-        margin-top: 20px;
-        font-size: 20px;
-        padding: 10px 20px;
-      }
+
+        .button-container {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 80px;
+        }
+            .start-button-container {
+    margin-top: 100px; // Adjust this value to move the button up or down
+    display: flex;
+    justify-content: center;
+  }
+
+        .start-button, .next-button, .stop-button {
+          font-size: 24px;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+           .start-button {
+          padding: 15px 90px;
+           }
+
+        .start-button, .next-button {
+          background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+          background-size: 200% 200%;
+          color: #ffffff;
+          animation: gradientAnimation 5s ease infinite;
+        }
+        .stop-button {
+          background-color: #808080;
+          color: #ffffff;
+        }
+        .start-button:hover, .next-button:hover, .stop-button:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        .start-button:active, .next-button:active, .stop-button:active {
+          transform: scale(0.95);
+        }
+        .next-button, .stop-button {
+          font-size: 20px;
+          padding: 20px 90px;
+        }
+
       .countdown {
         font-size: 72px;
         font-weight: bold;
@@ -1421,11 +1461,11 @@ export default function Home() {
         .title {
           font-size: 18px;
         }
-        .start-button, .next-button {
+        .start-button, .next-button .stop-button{
           font-size: 20px;
           padding: 12px 90px;
         }
-        .next-button {
+        .next-button .stop-button {
           font-size: 18px;
           margin-top: 1rem;
           padding: 8px 90px;
