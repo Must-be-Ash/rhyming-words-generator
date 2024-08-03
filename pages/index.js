@@ -1283,9 +1283,9 @@ export default function Home() {
 
       <h1 className="title">Rhyme Time</h1>
       <p className="description">
-        Welcome to Rhyme Time! This tool helps you practice your improvisation skills.
-        It gives you three words at a time which rhyme. You can change the frequency of how fast you want the next set.
-        Challenge yourself to create lines using these rhymes. Ready to flex your rap skills?
+        Rhyme Time helps you practice your improvisation skills.
+        It gives you three words at a time which rhyme.
+        Challenge yourself to create lines using these bars.
       </p>
 
       <main>
