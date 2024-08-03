@@ -1365,7 +1365,7 @@ export default function Home() {
         color: #808080;
       }
       .frequency-control {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         display: flex;
         align-items: center;
       }
