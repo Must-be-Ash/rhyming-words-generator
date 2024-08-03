@@ -1311,11 +1311,11 @@ export default function Home() {
               ))}
             </div>
             <div className="button-container">
-              <button className="stop-button" onClick={handleStop}>
-                Stop
-              </button>
               <button className="next-button" onClick={handleNext}>
                 Next
+              </button>
+              <button className="stop-button" onClick={handleStop}>
+                Stop
               </button>
             </div>
           </>
@@ -1375,6 +1375,7 @@ export default function Home() {
 
         .button-container {
           display: flex;
+         flex-direction: column;
           justify-content: center;
           gap: 20px;
           margin-top: 80px;
