@@ -1376,11 +1376,11 @@ export default function Home() {
           color: #cccccc;
           text-align: center;
           max-width: 600px;
-          margin-bottom: 30px;
+          margin-bottom: 15px;
         }
 
       .frequency-control {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
       }
