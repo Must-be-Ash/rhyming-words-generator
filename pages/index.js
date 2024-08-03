@@ -1283,9 +1283,9 @@ export default function Home() {
 
       <h1 className="title">Rhyme Time</h1>
       <p className="description">
-        Rhyme Time helps you practice your improvisation skills.<br />
-        It gives you three words at a time which rhyme.<br />
-        Challenge yourself to create lines using these bars.<br />
+        Rhyme Time helps you practice your improvisation skills.
+        It gives you three words at a time which rhyme.
+        Challenge yourself to create lines using these bars.
       </p>
 
       <main>
@@ -1380,7 +1380,7 @@ export default function Home() {
         }
 
       .frequency-control {
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         display: flex;
         align-items: center;
       }
