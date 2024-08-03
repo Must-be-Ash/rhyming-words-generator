@@ -1340,10 +1340,11 @@ export default function Home() {
       }
       .title {
         font-size: 22px;
+        margin-top: 20px;
         margin-bottom: 40px;
         font-weight: 600;
         font-style: italic;
-        color: #f0f0f0;
+        color: #808080;
       }
       .frequency-control {
         margin-bottom: 20px;
@@ -1355,7 +1356,8 @@ export default function Home() {
       }
       .start-button, .next-button {
         font-size: 24px;
-        padding: 15px 30px;
+        padding: 15px 90px;
+        margin-top: 1rem;
         background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
         background-size: 200% 200%;
         color: #ffffff;
@@ -1421,11 +1423,12 @@ export default function Home() {
         }
         .start-button, .next-button {
           font-size: 20px;
-          padding: 12px 24px;
+          padding: 12px 90px;
         }
         .next-button {
           font-size: 18px;
-          padding: 8px 16px;
+          margin-top: 1rem;
+          padding: 8px 90px;
         }
         .countdown {
           font-size: 60px;
