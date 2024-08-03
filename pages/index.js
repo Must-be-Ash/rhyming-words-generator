@@ -1282,7 +1282,12 @@ export default function Home() {
 </Head>
 
       <h1 className="title">Rhyme Time</h1>
-      
+      <p className="description">
+        Welcome to Rhyme Time! This tool helps you practice your improvisation skills.
+        It gives you three words at a time which rhyme. You can change the frequency of how fast you want the next set.
+        Challenge yourself to create lines using these rhymes. Ready to flex your rap skills?
+      </p>
+
       <main>
         <div className="frequency-control">
           <input
@@ -1364,6 +1369,16 @@ export default function Home() {
         font-style: italic;
         color: #808080;
       }
+
+              .description {
+          font-size: 16px;
+          line-height: 1.5;
+          color: #cccccc;
+          text-align: center;
+          max-width: 600px;
+          margin-bottom: 30px;
+        }
+
       .frequency-control {
         margin-bottom: 40px;
         display: flex;
@@ -1462,6 +1477,12 @@ export default function Home() {
         .title {
           font-size: 18px;
         }
+
+                  .description {
+            font-size: 14px;
+            padding: 0 20px;
+          }
+
         .start-button, .next-button .stop-button{
           font-size: 20px;
           padding: 12px 90px;
